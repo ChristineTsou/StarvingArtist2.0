@@ -28,8 +28,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let calendar = NSCalendar.currentCalendar()
          let components = calendar.components([ .Hour, .Minute, .Second], fromDate: date)
-        //let hour=components.Hour
-        
+        let hour=components.hour
+        let minutes = components.minute
+         
     
         // Do any additional setup after loading the view, typically from a nib.
         /*self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0,
