@@ -13,6 +13,7 @@
 		B78C49111D526D1F00AB3C0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78C49101D526D1F00AB3C0E /* Assets.xcassets */; };
 		B78C49141D526D1F00AB3C0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78C49121D526D1F00AB3C0E /* LaunchScreen.storyboard */; };
 		B78C491F1D526D1F00AB3C0E /* starvingArtistTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78C491E1D526D1F00AB3C0E /* starvingArtistTestTests.swift */; };
+		B78EE3531D5A234E0046870E /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = B78EE3521D5A234E0046870E /* PodFile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B78C491A1D526D1F00AB3C0E /* starvingArtistTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = starvingArtistTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78C491E1D526D1F00AB3C0E /* starvingArtistTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starvingArtistTestTests.swift; sourceTree = "<group>"; };
 		B78C49201D526D1F00AB3C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B78EE3521D5A234E0046870E /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PodFile; path = ../PodFile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		B78C49081D526D1F00AB3C0E /* starvingArtistTest */ = {
 			isa = PBXGroup;
 			children = (
+				B78EE3521D5A234E0046870E /* PodFile */,
 				B78C49091D526D1F00AB3C0E /* AppDelegate.swift */,
 				B78C490B1D526D1F00AB3C0E /* ViewController.swift */,
 				B78C490D1D526D1F00AB3C0E /* Main.storyboard */,
@@ -179,6 +182,7 @@
 			files = (
 				B78C49141D526D1F00AB3C0E /* LaunchScreen.storyboard in Resources */,
 				B78C49111D526D1F00AB3C0E /* Assets.xcassets in Resources */,
+				B78EE3531D5A234E0046870E /* PodFile in Resources */,
 				B78C490F1D526D1F00AB3C0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +394,7 @@
 				B78C49251D526D1F00AB3C0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B78C49261D526D1F00AB3C0E /* Build configuration list for PBXNativeTarget "starvingArtistTestTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +403,7 @@
 				B78C49281D526D1F00AB3C0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

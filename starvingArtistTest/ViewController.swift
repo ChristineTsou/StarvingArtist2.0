@@ -13,10 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var Artist: UIImageView!
     @IBOutlet weak var Achievement: UIImageView!
     @IBOutlet weak var Level: UILabel!
+
     @IBOutlet weak var clockTime: UILabel!
     
     //preparation variables
     var date = NSDate()
+    var currentTime=NSTimer()
     var draws:Int=0
     var counter:Int=0
     var artistList:[String]=["starvingartistartist1","starvingartistartist2","starvingartistartist3","artistlevel4crop","starvingartistartist5"]
@@ -26,29 +28,37 @@ class ViewController: UIViewController {
  //*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        let calendar = NSCalendar.currentCalendar()
-         let components = calendar.components([ .Hour, .Minute, .Second], fromDate: date)
-        let hour=components.hour
-        let minutes = components.minute
-         
-    
         // Do any additional setup after loading the view, typically from a nib.
-        /*self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0,
+        
+        //Timer
+       /* let calendar = NSCalendar.currentCalendar()
+         let components = calendar.components([ .Hour, .Minute, .Second], fromDate: date)
+        let hour = components.hour
+        let minutes = components.minute
+        */
+    
+       //displayed time
+        self.currentTime = NSTimer.scheduledTimerWithTimeInterval(1.0,
             target: self,
             selector: Selector("tick"),
             userInfo: nil,
             repeats: true)
-        */
+        
         //starting artist
         Artist.image=UIImage(named:"starvingartistartist1")
             self.Level.text="Level "+levelList[0]
         Achievement.image=UIImage(named:"starvingartistbarstarter")
     }
-   /* @objc func tick() {
+    //displayed time
+    @objc func tick() {
         clockTime.text = NSDateFormatter.localizedStringFromDate(NSDate(),
                                                                         dateStyle: .MediumStyle,
                                                                         timeStyle: .MediumStyle)
-    }*/
+    }
+    //displayed time ends
+    
+    //main function
+    
     @IBAction func drawClicked(sender: UIButton){
         draws+=1
         //Popup 1
@@ -96,7 +106,7 @@ class ViewController: UIViewController {
         //start over at beginning
         if draws==10 && Artist.image==UIImage(named:"starvingartistartist5")
         {
-            let popupcongrats=UIAlertController(title:"Congradulations!",message:" You have finished all the levels. Keep up the good work!",preferredStyle:UIAlertControllerStyle.Alert)
+            let popupcongrats=UIAlertController(title:"Congratulations!",message:" You have finished all the levels. Keep up the good work!",preferredStyle:UIAlertControllerStyle.Alert)
             popupcongrats.addAction(UIAlertAction(title:"Ok!",style:UIAlertActionStyle.Default,handler:nil))
             self.presentViewController(popupcongrats, animated: true, completion: nil)
             draws=0
@@ -112,10 +122,14 @@ class ViewController: UIViewController {
             self.Level.text="Level "+levelList[counter]
             
         }
+        self.drawButton.enabled = false
+        NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "enableButton", userInfo: nil, repeats: false)
         
     
     }
-
+    func enableButton() {
+        self.drawButton.enabled = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
